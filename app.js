@@ -1,7 +1,7 @@
 var params = {
 
   // global parameters
-  frequency: 0.5,
+  frequency: 5,
 
   // pulse parameters
   pulse: {
@@ -12,7 +12,7 @@ var params = {
   // audio parameters
   tone: {
     type      : 'sine',
-    frequency : 20, // base tone in hz
+    frequency : 100, // base tone in hz
   },
 
 };
