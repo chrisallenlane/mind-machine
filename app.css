@@ -1,5 +1,20 @@
 html {
+  background-color: black;
+}
+
+body {
   margin: 0;
   padding: 0;
-  background-color: black;
+}
+
+main {
+  animation: pulsate 2s infinite linear;
+  background-color: #00F;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes pulsate {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
 }
