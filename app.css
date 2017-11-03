@@ -8,8 +8,6 @@ body {
 }
 
 main {
-  animation: pulsate 2s infinite linear;
-  background-color: #00F;
   height: 100%;
   width: 100%;
 }

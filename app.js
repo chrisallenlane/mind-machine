@@ -1,20 +1,16 @@
-console.log('newer 2');
-
 var params = {
 
-  // visual
+  // pulse parameters
   pulse: {
-    //color     : '#00F',
-    color     : '#F00',
-    frequency : 4,
+    target    : document.getElementsByTagName('main')[0],
+    color     : '#00F',
+    frequency : 0.5,
   },
 
-  // audio
+  // audio parameters
   tone: {
     type: 'sine',
     frequency: {
-      //left  : 60,
-      //right : 60.5,
       left  : 20,
       right : 20.5,
     },
@@ -23,7 +19,7 @@ var params = {
 };
 
 // start the visual pulses
-//var pulse = Pulse(params.pulse);
+pulse(params.pulse);
 
 // start the tones
 var tone  = Tone(params.tone);
