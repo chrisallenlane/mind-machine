@@ -1,10 +1,12 @@
 var params = {
 
+  // global parameters
+  frequency: 0.5,
+
   // pulse parameters
   pulse: {
     target    : document.getElementsByTagName('main')[0],
     color     : '#00F',
-    frequency : 0.5,
   },
 
   // audio parameters
@@ -19,7 +21,7 @@ var params = {
 };
 
 // start the visual pulses
-pulse(params.pulse);
+pulse(params);
 
 // start the tones
 var tone  = Tone(params.tone);

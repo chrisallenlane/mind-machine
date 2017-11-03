@@ -1,9 +1,12 @@
 var pulse = function (params) {
 
+  // pluck the DOM element to pulsate
+  var target = params.pulse.target;
+
   // set the background color
-  params.target.style.background = params.color;
+  target.style.background = params.pulse.color;
 
   // apply the pulse animation
-  var duration                   = 1000 / params.frequency;
-  params.target.style.animation  = 'pulsate ' + duration + 'ms infinite linear';
+  var duration            = 1000 / params.frequency;
+  target.style.animation  = 'pulsate ' + duration + 'ms infinite linear';
 };
