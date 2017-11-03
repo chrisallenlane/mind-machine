@@ -5,17 +5,14 @@ var params = {
 
   // pulse parameters
   pulse: {
-    target    : document.getElementsByTagName('main')[0],
-    color     : '#00F',
+    target : document.getElementsByTagName('main')[0],
+    color  : '#00F',
   },
 
   // audio parameters
   tone: {
-    type: 'sine',
-    frequency: {
-      left  : 20,
-      right : 20.5,
-    },
+    type      : 'sine',
+    frequency : 20, // base tone in hz
   },
 
 };
@@ -24,4 +21,4 @@ var params = {
 pulse(params);
 
 // start the tones
-var tone  = Tone(params.tone);
+tone(params);
