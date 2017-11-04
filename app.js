@@ -1,3 +1,7 @@
+// hide the address bar on mobile
+window.scrollTo(0, 1);
+
+// app configs
 var params = {
 
   // global parameters
@@ -6,13 +10,13 @@ var params = {
   // pulse parameters
   pulse: {
     target : document.getElementsByTagName('main')[0],
-    color  : '#00F',
+    color  : '#008',
   },
 
   // audio parameters
   tone: {
     type      : 'sine',
-    frequency : 100, // base tone in hz
+    frequency : 50, // base tone in hz
   },
 
 };
