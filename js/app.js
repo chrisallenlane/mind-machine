@@ -1,8 +1,12 @@
+// ratio of visual frequency to audio hertz
+// TODO: this might be better as a log or something
+var ratio = 40;
+
 // app configs
 var params = {
 
   // global parameters
-  frequency: 5,
+  frequency: 10,
 
   // pulse parameters
   pulse: {
@@ -13,13 +17,33 @@ var params = {
   // audio parameters
   tone: {
     type      : 'sine',
-    frequency : 50, // base tone in hz
+    frequency : 10 * ratio   , // base tone in hz
   },
 
 };
 
-// start the visual pulses
+// begin
 pulse(params);
-
-// start the tones
 tone(params);
+
+// establish frequencies stepdowns
+var interval;
+var step = function () {
+
+  // bounds-check frequency
+  if (params.frequency <= 0.5) {
+    clearInterval(interval);
+    return;
+  }
+
+  // step down the "master" frequency
+  params.frequency      -= 0.5;
+  params.tone.frequency  = ratio * params.frequency;
+
+  // and derive new specific frequencies
+  pulse(params);
+  tone(params);
+};
+
+// step down every minute
+interval = setInterval(step, 6 * 1000);
