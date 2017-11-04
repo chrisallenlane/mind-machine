@@ -1,6 +1,3 @@
-// hide the address bar on mobile
-window.scrollTo(0, 1);
-
 // app configs
 var params = {
 
