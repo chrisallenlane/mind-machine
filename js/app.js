@@ -6,7 +6,7 @@ var ratio = 40;
 var params = {
 
   // global parameters
-  frequency: 10,
+  frequency: 13,
 
   // pulse parameters
   pulse: {
