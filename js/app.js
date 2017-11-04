@@ -46,4 +46,4 @@ var step = function () {
 };
 
 // step down every minute
-interval = setInterval(step, 6 * 1000);
+interval = setInterval(step, 60 * 1000);
