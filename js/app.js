@@ -11,7 +11,7 @@ var params = {
   // pulse parameters
   pulse: {
     target : document.getElementsByTagName('main')[0],
-    color  : '#008',
+    color  : '#00F',
   },
 
   // audio parameters
@@ -46,4 +46,4 @@ var step = function () {
 };
 
 // step down every minute
-interval = setInterval(step, 60 * 1000);
+interval = setInterval(step, 1.5 * 60 * 1000);
