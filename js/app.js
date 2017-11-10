@@ -2,11 +2,17 @@
 var params = {
 
   // strobe frequency
-  frequency : 10,
+  frequency : 8,
 
   // ratio of visual frequency to audio hertz
   // TODO: this might be better as a log or something
-  ratio     : 40,
+  ratio     : 100,
+
+  // time spent at each frequency
+  interval  : 90 * 1000, // 90 seconds
+
+  // frequency to step down per step (in hz)
+  step      : 0.5,
 };
 
 // strobe parameters
@@ -30,13 +36,13 @@ var interval;
 var step = function () {
 
   // bounds-check frequency
-  if (params.frequency <= 0.5) {
+  if (params.frequency <= 0.6) {
     clearInterval(interval);
     return;
   }
 
   // step down the "master" frequency
-  params.frequency      -= 0.5;
+  params.frequency      -= params.step;
   params.tone.frequency  = params.ratio * params.frequency;
 
   // and derive new specific frequencies
@@ -44,6 +50,5 @@ var step = function () {
   tone(params);
 };
 
-// step down every minute
-//interval = setInterval(step, 1.5 * 60 * 1000);
-interval = setInterval(step, 1.5 * 60 * 100);
+// step down at specified intervals
+interval = setInterval(step, params.interval);
