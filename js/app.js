@@ -1,29 +1,28 @@
-// ratio of visual frequency to audio hertz
-// TODO: this might be better as a log or something
-var ratio = 40;
-
-// app configs
+// global parameters
 var params = {
 
-  // global parameters
-  frequency: 13,
+  // strobe frequency
+  frequency : 10,
 
-  // pulse parameters
-  pulse: {
-    target : document.getElementsByTagName('main')[0],
-    color  : '#00F',
-  },
+  // ratio of visual frequency to audio hertz
+  // TODO: this might be better as a log or something
+  ratio     : 40,
+};
 
-  // audio parameters
-  tone: {
-    type      : 'sine',
-    frequency : 10 * ratio   , // base tone in hz
-  },
+// strobe parameters
+params.strobe = {
+  target : document.getElementsByTagName('main')[0],
+  color  : '#00F',
+};
 
+// audio parameters
+params.tone = {
+  type      : 'sine',
+  frequency : params.frequency * params.ratio, // base tone in hz
 };
 
 // begin
-pulse(params);
+strobe(params);
 tone(params);
 
 // establish frequencies stepdowns
@@ -38,12 +37,13 @@ var step = function () {
 
   // step down the "master" frequency
   params.frequency      -= 0.5;
-  params.tone.frequency  = ratio * params.frequency;
+  params.tone.frequency  = params.ratio * params.frequency;
 
   // and derive new specific frequencies
-  pulse(params);
+  strobe(params);
   tone(params);
 };
 
 // step down every minute
-interval = setInterval(step, 1.5 * 60 * 1000);
+//interval = setInterval(step, 1.5 * 60 * 1000);
+interval = setInterval(step, 1.5 * 60 * 100);
