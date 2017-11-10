@@ -9,7 +9,7 @@ var params = {
   ratio     : 100,
 
   // time spent at each frequency
-  interval  : 90 * 1000, // 90 seconds
+  interval  : 3 * 60 * 1000, // 3 minutes
 
   // frequency to step down per step (in hz)
   step      : 0.5,
@@ -49,6 +49,10 @@ var step = function () {
   strobe(params);
   tone(params);
 };
+
+// log the runtime
+var time = (params.frequency / params.step) * params.interval / 60 / 1000;
+console.log('runtime: ' + time + ' minutes');
 
 // step down at specified intervals
 interval = setInterval(step, params.interval);
