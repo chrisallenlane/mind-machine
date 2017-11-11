@@ -1,5 +1,8 @@
 var strobe = function (params) {
 
+  // log debugging info
+  console.log('strobe: ' + params.frequency + ' hz');
+
   // pluck the DOM element to pulsate
   var target = params.strobe.target;
 

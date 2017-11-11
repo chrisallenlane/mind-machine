@@ -6,7 +6,7 @@ var params = {
 
   // ratio of visual frequency to audio hertz
   // TODO: this might be better as a log or something
-  ratio     : 100,
+  ratio     : 150,
 
   // time spent at each frequency
   interval  : 3 * 60 * 1000, // 3 minutes
@@ -14,6 +14,10 @@ var params = {
   // frequency to step down per step (in hz)
   step      : 0.5,
 };
+
+// log the runtime
+var time = (params.frequency / params.step) * params.interval / 60 / 1000;
+console.log('runtime: ' + time + ' minutes');
 
 // strobe parameters
 params.strobe = {
@@ -49,10 +53,6 @@ var step = function () {
   strobe(params);
   tone(params);
 };
-
-// log the runtime
-var time = (params.frequency / params.step) * params.interval / 60 / 1000;
-console.log('runtime: ' + time + ' minutes');
 
 // step down at specified intervals
 interval = setInterval(step, params.interval);
