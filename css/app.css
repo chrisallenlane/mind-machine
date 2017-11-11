@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  height: 150%; /* give room to hide address bar on mobile */
+  min-height: 2000px; /* give room to hide address bar on mobile */
   margin: 0;
   padding: 0;
 }
