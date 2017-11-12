@@ -2,12 +2,12 @@ mind-machine
 ============
 A mind-machine built for [Google Cardboard][].
 
-**WARNING: This application may potentially trigger seizures for people with
+**WARNING: This application may potentially trigger seizures in people with
 photosensitive epilepsy.**
 
 About
 -----
-"Mind Machines", per [Wikipedia][mind-machines]:
+[Wikipedia][mind-machines]:
 
 > A mind machine (aka brain machine or light and sound machine) uses pulsing
 > rhythmic sound, flashing light, electrical or magnetic fields, or a
