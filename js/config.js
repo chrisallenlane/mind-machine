@@ -2,13 +2,13 @@
 var config = {
 
   // strobe frequency
-  frequency : 8,
+  frequency : 15,
 
   // time spent at each frequency
-  interval  : 1.5 * 60 * 1000, // 1.5 minutes
+  interval  : 3 * 60 * 1000, // 3 minutes
 
   // frequency to step down per step (in hz)
-  step      : 0.5,
+  step      : 2,
 
   // strobe parameters
   strobe: {
