@@ -1,5 +1,5 @@
 // global parameters
-var params = {
+var config = {
 
   // strobe frequency
   frequency : 8,

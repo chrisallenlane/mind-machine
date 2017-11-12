@@ -1,15 +1,15 @@
-var strobe = function (params) {
+var strobe = function (config) {
 
   // log debugging info
-  console.log('strobe: ' + params.frequency + ' hz');
+  console.log('strobe: ' + config.frequency + ' hz');
 
   // pluck the DOM element to pulsate
-  var target = params.strobe.target;
+  var target = config.strobe.target;
 
   // set the background color
-  target.style.background = params.strobe.color;
+  target.style.background = config.strobe.color;
 
   // apply the strobe animation
-  var duration            = 1000 / params.frequency;
+  var duration            = 1000 / config.frequency;
   target.style.animation  = 'pulsate ' + duration + 'ms infinite linear';
 };

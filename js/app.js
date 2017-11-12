@@ -1,29 +1,29 @@
 // log the runtime
-var time = (params.frequency / params.step) * params.interval / 60 / 1000;
+var time = (config.frequency / config.step) * config.interval / 60 / 1000;
 console.log('runtime: ' + time + ' minutes');
 
 // begin
-strobe(params);
-tone(params);
+strobe(config);
+tone(config);
 
 // establish frequencies stepdowns
 var interval;
 var step = function () {
 
   // bounds-check frequency
-  if (params.frequency <= 0.6) {
+  if (config.frequency <= 0.6) {
     clearInterval(interval);
     return;
   }
 
   // step down the "master" frequency
-  params.frequency      -= params.step;
-  params.tone.frequency -= params.frequency;
+  config.frequency      -= config.step;
+  config.tone.frequency -= config.frequency;
 
   // and derive new specific frequencies
-  strobe(params);
-  tone(params);
+  strobe(config);
+  tone(config);
 };
 
 // step down at specified intervals
-interval = setInterval(step, params.interval);
+interval = setInterval(step, config.interval);

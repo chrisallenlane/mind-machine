@@ -9,7 +9,7 @@ var right  = null;
 var merger = null;
 
 // tone-generation function
-var tone = function (params) {
+var tone = function (config) {
 
   // initialize the audio channels if uninitialized
   if (left == null) {
@@ -17,10 +17,10 @@ var tone = function (params) {
     // initialize the left and right audio channels
     left                  = context.createOscillator();
     right                 = context.createOscillator();
-    left.type             = params.tone.type;
-    right.type            = params.tone.type;
-    left.frequency.value  = params.tone.frequency;
-    right.frequency.value = params.tone.frequency + params.frequency;
+    left.type             = config.tone.type;
+    right.type            = config.tone.type;
+    left.frequency.value  = config.tone.frequency;
+    right.frequency.value = config.tone.frequency + config.frequency;
 
     // create a channel merger
     merger = context.createChannelMerger();
@@ -39,10 +39,10 @@ var tone = function (params) {
 
   // otherwise, update the frequency
   else {
-    left.frequency.value  = params.tone.frequency;
-    right.frequency.value = params.tone.frequency + params.frequency;
+    left.frequency.value  = config.tone.frequency;
+    right.frequency.value = config.tone.frequency + config.frequency;
   }
 
-  console.log('tone (L): ' + params.tone.frequency + ' hz');
-  console.log('tone (R): ' + (params.tone.frequency + params.frequency) + ' hz');
+  console.log('tone (L): ' + config.tone.frequency + ' hz');
+  console.log('tone (R): ' + (config.tone.frequency + config.frequency) + ' hz');
 };

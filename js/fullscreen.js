@@ -1,8 +1,8 @@
 // put the app in fullscreen mode on click
-params.strobe.target.onclick = function () {
+config.strobe.target.onclick = function () {
 
   // if fullscreen is supported
-  if (params.strobe.target.webkitRequestFullscreen) {
+  if (config.strobe.target.webkitRequestFullscreen) {
 
     // exit fullscreen if in fullscreen
     if (state.fullscreen) {
@@ -11,7 +11,7 @@ params.strobe.target.onclick = function () {
 
     // otherwise, enter fullscreen if not fullscreened
     else {
-      params.strobe.target.webkitRequestFullscreen();
+      config.strobe.target.webkitRequestFullscreen();
     }
 
     // change the screen state flag
