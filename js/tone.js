@@ -2,8 +2,10 @@
 
 var Tone = function() {
 
-  // one context per document
-  var context = new (window.AudioContext || window.webkitAudioContext)();
+  // create an audio context
+  var context = (window.AudioContext)
+    ? new window.AudioContext()
+    : new window.webkitAudioContext();
 
   // left and right audio channels
   var left    = null;
@@ -47,6 +49,7 @@ var Tone = function() {
       right.frequency.value = config.tone.frequency + config.frequency;
     }
 
+    // output debugging info
     console.log('tone (L): ' + config.tone.frequency + ' hz');
     console.log('tone (R): ' + (config.tone.frequency + config.frequency) + ' hz');
   };

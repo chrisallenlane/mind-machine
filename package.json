@@ -1,0 +1,30 @@
+{
+  "name": "mind-machine",
+  "version": "1.0.0",
+  "description": "A mind-machine built for Google Cardboard.",
+  "homepage": "https://github.com/chrisallenlane/mind-machine",
+  "author": {
+    "name": "Chris Allen Lane",
+    "email": "chris@chris-allen-lane.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "jshint js"
+  },
+  "jshintConfig": {
+    "esnext": true,
+    "expr": true,
+    "laxbreak": true
+  },
+  "devDependencies": {
+    "jshint": "2.9.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisallenlane/mind-machine"
+  },
+  "bugs": {
+    "url": "https://github.com/chrisallenlane/mind-machine/issues"
+  },
+  "main": "index.html"
+}
