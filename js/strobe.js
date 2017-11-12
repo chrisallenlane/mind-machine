@@ -1,15 +1,23 @@
-var strobe = function (config) {
+// Closure that returns a `strobe` method
 
-  // log debugging info
-  console.log('strobe: ' + config.frequency + ' hz');
+var Strobe = function () {
+  
+  // strobe function
+  var strobe = function (config) {
 
-  // pluck the DOM element to pulsate
-  var target = config.strobe.target;
+    // log debugging info
+    console.log('strobe: ' + config.frequency + ' hz');
 
-  // set the background color
-  target.style.background = config.strobe.color;
+    // pluck the DOM element to pulsate
+    var target = config.strobe.target;
 
-  // apply the strobe animation
-  var duration            = 1000 / config.frequency;
-  target.style.animation  = 'pulsate ' + duration + 'ms infinite linear';
+    // set the background color
+    target.style.background = config.strobe.color;
+
+    // apply the strobe animation
+    var duration            = 1000 / config.frequency;
+    target.style.animation  = 'pulsate ' + duration + 'ms infinite linear';
+  };
+
+  return strobe;
 };

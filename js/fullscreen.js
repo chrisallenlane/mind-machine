@@ -1,20 +1,23 @@
-// put the app in fullscreen mode on click
-config.strobe.target.onclick = function () {
+var fullscreen = function (target) {
 
-  // if fullscreen is supported
-  if (config.strobe.target.webkitRequestFullscreen) {
+  // put the app in fullscreen mode on click
+  target.onclick = function () {
 
-    // exit fullscreen if in fullscreen
-    if (state.fullscreen) {
-      document.webkitExitFullscreen();
+    // if fullscreen is supported
+    if (target.webkitRequestFullscreen) {
+
+      // exit fullscreen if in fullscreen
+      if (state.fullscreen) {
+        document.webkitExitFullscreen();
+      }
+
+      // otherwise, enter fullscreen if not fullscreened
+      else {
+        target.webkitRequestFullscreen();
+      }
+
+      // change the screen state flag
+      state.fullscreen = !state.fullscreen;
     }
-
-    // otherwise, enter fullscreen if not fullscreened
-    else {
-      config.strobe.target.webkitRequestFullscreen();
-    }
-
-    // change the screen state flag
-    state.fullscreen = !state.fullscreen;
-  }
+  };
 };
