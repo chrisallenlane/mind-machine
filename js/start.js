@@ -15,7 +15,7 @@ var Start = function (target, callback) {
     started = true;
 
     // hide the "tap to begin" notice
-    document.getElementsByTagName('p')[0].remove();
+    document.getElementsByTagName('header')[0].remove();
 
     // start
     callback();
