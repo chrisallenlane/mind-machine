@@ -1,7 +1,7 @@
 mind-machine
 ============
 A [mind-machine][] built for [Google Cardboard][] and other smartphone
-headsets, based off of information found in [Make Magazine][make].
+headsets.
 
 **Warning: mind-machines use strobe-like effects, and can induce seizures. Use
 at your own risk.**
