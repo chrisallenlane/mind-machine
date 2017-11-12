@@ -23,6 +23,33 @@ var params = {
   },
 };
 
+// app state vars
+var state = {
+  fullscreen: false,
+};
+
+// put the app in fullscreen mode on click
+params.strobe.target.onclick = function () {
+
+  // if fullscreen is supported
+  if (params.strobe.target.webkitRequestFullscreen) {
+
+    // exit fullscreen if in fullscreen
+    if (state.fullscreen) {
+      document.webkitExitFullscreen();
+    }
+
+    // otherwise, enter fullscreen if not fullscreened
+    else {
+      params.strobe.target.webkitRequestFullscreen();
+    }
+
+    // change the screen state flag
+    state.fullscreen = !state.fullscreen;
+  }
+
+};
+
 // log the runtime
 var time = (params.frequency / params.step) * params.interval / 60 / 1000;
 console.log('runtime: ' + time + ' minutes');
