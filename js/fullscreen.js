@@ -1,37 +1,23 @@
-// Closure that returns a `fullscreen` method
+var fullscreen = function (target) {
 
-var Fullscreen = function () {
+  // put the app in fullscreen mode on click
+  target.onclick = function () {
 
-  // initialize a nosleep instance
-  var noSleep = new NoSleep();
+    // if fullscreen is supported
+    if (target.webkitRequestFullscreen) {
 
-  // the fullscreen function
-  var fullscreen = function (target) {
-
-    // put the app in fullscreen mode on click
-    target.onclick = function () {
-
-      // prevent the screen from sleeping
-      noSleep.enable();
-
-      // if fullscreen is supported
-      if (target.webkitRequestFullscreen) {
-
-        // exit fullscreen if in fullscreen
-        if (state.fullscreen) {
-          document.webkitExitFullscreen();
-        }
-
-        // otherwise, enter fullscreen if not fullscreened
-        else {
-          target.webkitRequestFullscreen();
-        }
-
-        // change the screen state flag
-        state.fullscreen = !state.fullscreen;
+      // exit fullscreen if in fullscreen
+      if (state.fullscreen) {
+        document.webkitExitFullscreen();
       }
-    };
-  };
 
-  return fullscreen;
+      // otherwise, enter fullscreen if not fullscreened
+      else {
+        target.webkitRequestFullscreen();
+      }
+
+      // change the screen state flag
+      state.fullscreen = !state.fullscreen;
+    }
+  };
 };
