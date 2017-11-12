@@ -26,7 +26,7 @@ The app is hosted here:
 https://mind-machine.chris-allen-lane.com
 
 1. Visit the app on a mobile device.
-2. Tap the screen to enter "fullscreen" mode.
+2. Tap the screen to enter "fullscreen" mode and begin a session.
 3. Insert the mobile device into a Google Cardboard (or equivalent) headset.
 4. Assume a comfortable, meditative posture.
 
@@ -37,11 +37,12 @@ Tips
 ----
 1. For best results, use this application in a dark, quiet room. The fewer
    outside distractions you perceive, the better.
-2. Use headphones.
-3. Close your eyes. You'll be able to see the light pulses through closed
+2. Close your eyes. You'll be able to see the light pulses through closed
    eyelids. You may even want to turn your screen brightness down, because a
    bright screen will become uncomfortable once your eyes have become
    dark-adapted.
+3. Use headphones.
+4. Configure your device to screen-sleep no earlier than 30 minutes.
 
 
 Safety
