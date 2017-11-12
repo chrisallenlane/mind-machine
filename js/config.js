@@ -22,8 +22,3 @@ var config = {
     frequency : 200,
   },
 };
-
-// app state vars
-var state = {
-  fullscreen: false,
-};

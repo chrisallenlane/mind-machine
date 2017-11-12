@@ -12,6 +12,17 @@ main {
   width: 100%;
 }
 
+header {
+  color: white;
+  font-family: sans-serif;
+  font-size: xx-large;
+  text-align: center;
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 @keyframes pulsate {
   0%, 100% { opacity: 0; }
   50%      { opacity: 1; }
