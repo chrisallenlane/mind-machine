@@ -16,7 +16,7 @@ var Strobe = function () {
 
     // apply the strobe animation
     var duration            = 1000 / config.frequency;
-    target.style.animation  = 'pulsate ' + duration + 'ms infinite linear';
+    target.style.animation  = 'pulsate ' + duration + 'ms infinite ease';
   };
 
   return strobe;
