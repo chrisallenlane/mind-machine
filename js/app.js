@@ -1,5 +1,3 @@
-// TODO: onready/onload
-
 // log the runtime
 var time = (config.frequency / config.step) * config.interval / 60 / 1000;
 console.log('runtime: ' + time + ' minutes');
@@ -20,9 +18,12 @@ var interval;
 var step = function () {
 
   // bounds-check frequency
-  if (config.frequency <= 0.6) {
+  if (config.frequency <= config.step) {
+    // assert that we reach 0.5hz regardless of the step value
+    config.step = 0.5;
+
+    // when we've hit 0.5hz, remove this interval timer
     clearInterval(interval);
-    return;
   }
 
   // step down the "master" frequency

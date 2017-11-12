@@ -19,7 +19,7 @@ var config = {
   // audio parameters
   tone: {
     type      : 'sine',
-    frequency : 150,
+    frequency : 200,
   },
 };
 
