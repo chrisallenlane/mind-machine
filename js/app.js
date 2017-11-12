@@ -4,12 +4,13 @@
 var time = (config.frequency / config.step) * config.interval / 60 / 1000;
 console.log('runtime: ' + time + ' minutes');
 
+// initialize methods
+var fullscreen = Fullscreen();
+var strobe     = Strobe();
+var tone       = Tone();
+
 // bind the fullscreen functionality
 fullscreen(config.strobe.target);
-
-// initialize the tone and strobe methods
-var tone   = Tone();
-var strobe = Strobe();
 
 // begin
 strobe(config);
